@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # medclock
 
 A new Flutter project.
@@ -18,3 +19,6 @@ samples, guidance on mobile development, and a full API reference.
 =======
 # Medclock
 >>>>>>> 6f607d9591a41864fe07ecfb46e7b370fba93888
+=======
+# Medclock
+>>>>>>> 38e89feb807de9dd33972b4aaff208d481838f51
