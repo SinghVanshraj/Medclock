@@ -1,0 +1,1 @@
+{"flutter":{"platforms":{"android":{"default":{"projectId":"medclock-a8ff0","appId":"1:230846470300:android:030cf0b0511cda7fd83559","fileOutput":"android/app/google-services.json"}},"dart":{"lib/firebase_options.dart":{"projectId":"medclock-a8ff0","configurations":{"android":"1:230846470300:android:030cf0b0511cda7fd83559","ios":"1:230846470300:ios:13a0baf597df527ad83559"}}}}}}

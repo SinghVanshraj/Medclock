@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "230846470300",
+    "project_id": "medclock-a8ff0",
+    "storage_bucket": "medclock-a8ff0.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:230846470300:android:030cf0b0511cda7fd83559",
+        "android_client_info": {
+          "package_name": "com.example.medclock"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDu2RQ7V7ebaYlgX8ojGVPeKbJXgA6vXyA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
