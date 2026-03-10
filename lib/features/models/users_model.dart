@@ -1,5 +1,3 @@
-enum UserRole {patient, caregiver}
-
 class UsersModel {
   final String id;
   final String email;

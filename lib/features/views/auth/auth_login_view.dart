@@ -10,7 +10,7 @@ class AuthLoginView extends StatefulWidget {
 }
 
 class _AuthLoginViewState extends State<AuthLoginView> {
-   final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
 
   final TextEditingController _passwordController = TextEditingController();
 
@@ -32,29 +32,6 @@ class _AuthLoginViewState extends State<AuthLoginView> {
     }
 
     if (authVM.error.toString().isNotEmpty) debugPrint(authVM.error.toString());
-
-    // if (authVM.user != null) {
-    //   return FutureBuilder(
-    //     future: FirebaseUserLoginDb().getUserDetail(authVM.user!.uid),
-    //     builder: (context, snapshot) {
-    //       if (!snapshot.hasData) {
-    //         return const Scaffold(
-    //           body: Center(child: CircularProgressIndicator.adaptive()),
-    //         );
-    //       }
-
-    //       final role = snapshot.data!.role;
-
-    //       if (role == 'admin') {
-    //         return AdminDashboardView();
-    //       }
-    //       if (role == 'teacher') {
-    //         return TeachersDashboardView();
-    //       }
-    //       return Scaffold(body: Center(child: Text('No role exist')));
-    //     },
-    //   );
-    // }
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -102,33 +79,6 @@ class _AuthLoginViewState extends State<AuthLoginView> {
                       _emailController.text.trim(),
                       _passwordController.text.trim(),
                     );
-
-                    final userData = authVM.user;
-                    if (userData == null) {
-                      return;
-                    } else {
-                      // final userRole = await FirebaseUserLoginDb()
-                      //     .getUserDetail(userData.uid);
-                      // if (!context.mounted) {
-                      //   return;
-                      // }
-                      // if (userRole?.role.toString() == 'admin') {
-                      //   Navigator.pushReplacement(
-                      //     context,
-                      //     MaterialPageRoute(
-                      //       builder: (context) => AdminDashboardView(),
-                      //     ),
-                      //   );
-                      // }
-                      // if (userRole?.role.toString() == 'teacher') {
-                      //   Navigator.pushReplacement(
-                      //     context,
-                      //     MaterialPageRoute(
-                      //       builder: (context) => TeachersDashboardView(),
-                      //     ),
-                      //   );
-                      // }
-                    }
                   },
                   style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(
