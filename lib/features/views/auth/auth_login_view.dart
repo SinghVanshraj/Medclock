@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:medclock/core/services/user_role_data.dart';
+import 'package:medclock/features/views/dashboard/caregiver_dashboard_view.dart';
+import 'package:medclock/features/views/dashboard/patient_dashboard_view.dart';
 import 'package:provider/provider.dart';
 import 'package:medclock/features/viewmodels/auth_view_model.dart';
 
@@ -32,6 +35,27 @@ class _AuthLoginViewState extends State<AuthLoginView> {
     }
 
     if (authVM.error.toString().isNotEmpty) debugPrint(authVM.error.toString());
+
+    if (authVM.user != null) {
+      return FutureBuilder(
+        future: UserRoleData().getUserRole(authVM.user!.uid),
+        builder: (context, snapshot) {
+          if (!snapshot.hasData) {
+            return const Scaffold(
+              body: Center(child: CircularProgressIndicator.adaptive()),
+            );
+          }
+
+          if (snapshot.data!.role == 'caregiver') {
+            return CaregiverDashboardView();
+          }
+          if (snapshot.data!.role == 'patient') {
+            return PatientDashboardView();
+          }
+          return Scaffold(body: Center(child: Text('no role exist')));
+        },
+      );
+    }
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -89,12 +113,13 @@ class _AuthLoginViewState extends State<AuthLoginView> {
                 ),
               ),
               const SizedBox(height: 20),
-              TextButton(
-                onPressed: () {
-                  // Navigate to sign-up or forgot password
-                },
-                child: const Text('Forgot Password?'),
+              InkWell(
+                onTap: () {},
+                child: const Text("Don't have account?Create account"),
               ),
+
+              const SizedBox(height: 20),
+              InkWell(onTap: () {}, child: const Text('Forgot Password?')),
             ],
           ),
         ),
