@@ -16,4 +16,20 @@ class PatientModel {
     required this.gender,
     this.caregiverId,
   });
+
+  Map<String, dynamic> toJson() {
+    return {
+      'uid': uid,
+      'name': name,
+      'email': email,
+      'phone': phone,
+      'age': age,
+      'gender': gender,
+      'caregiverId': caregiverId,
+    };
+  }
+
+  factory PatientModel.fromJson(Map<String, dynamic> json) {
+    return PatientModel(uid: json['uid'], name: json['name'], email: json['email'], phone: json['phone'], age: json['age'], gender: json['gender']);
+  }
 }

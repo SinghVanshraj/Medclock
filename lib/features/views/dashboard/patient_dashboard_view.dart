@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:medclock/core/widgets/medicine_tile.dart';
 
 class PatientDashboardView extends StatelessWidget {
   const PatientDashboardView({super.key});
@@ -48,9 +49,21 @@ class PatientDashboardView extends StatelessWidget {
             Expanded(
               child: ListView(
                 children: [
-                  medicineTile("Paracetamol", "2 Tablets", "08:00 AM"),
-                  medicineTile("Vitamin C", "1 Tablet", "02:00 PM"),
-                  medicineTile("Insulin", "5 Units", "08:00 PM"),
+                  MedicineTile(
+                    name: "Paracetamol",
+                    dosage: "2 Tablets",
+                    time: "08:00 AM",
+                  ),
+                  MedicineTile(
+                    name: "Vitamin C",
+                    dosage: "1 Tablet",
+                    time: "02:00 PM",
+                  ),
+                  MedicineTile(
+                    name: "Insulin",
+                    dosage: "5 Units",
+                    time: "08:00 PM",
+                  ),
                 ],
               ),
             ),
@@ -73,24 +86,6 @@ class PatientDashboardView extends StatelessWidget {
           BottomNavigationBarItem(icon: Icon(Icons.alarm), label: "Reminders"),
           BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile"),
         ],
-      ),
-    );
-  }
-
-  Widget medicineTile(String name, String dosage, String time) {
-    return Card(
-      child: ListTile(
-        leading: const Icon(Icons.medication),
-        title: Text(name),
-        subtitle: Text(dosage),
-        trailing: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(time),
-            const SizedBox(height: 4),
-            const Text("Take", style: TextStyle(color: Colors.blue)),
-          ],
-        ),
       ),
     );
   }
