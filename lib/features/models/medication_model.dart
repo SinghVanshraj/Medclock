@@ -22,4 +22,28 @@ class MedicationModel {
     this.instruction,
     this.prescriptionPhoto,
   });
+
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'name': name,
+      'dosage': dosage,
+      'form': form,
+      'frequency': frequency,
+      'startDate': startDate,
+      'remainingCount': remainingCount,
+    };
+  }
+
+  factory MedicationModel.fromJson(Map<String, dynamic> json) {
+    return MedicationModel(
+      id: json['id'],
+      name: json['name'],
+      dosage: json['dosage'],
+      form: json['form'],
+      frequency: json['frequency'],
+      startDate: json['startDate'],
+      remainingCount: json['remainingCount'],
+    );
+  }
 }
