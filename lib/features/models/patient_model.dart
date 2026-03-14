@@ -30,6 +30,13 @@ class PatientModel {
   }
 
   factory PatientModel.fromJson(Map<String, dynamic> json) {
-    return PatientModel(uid: json['uid'], name: json['name'], email: json['email'], phone: json['phone'], age: json['age'], gender: json['gender']);
+    return PatientModel(
+      uid: json['uid'],
+      name: json['name'],
+      email: json['email'],
+      phone: json['phone'],
+      age: json['age'],
+      gender: json['gender'],
+    );
   }
 }

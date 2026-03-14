@@ -3,7 +3,7 @@ class DoseLogModel {
   final String medicationId;
   final DateTime scheduleTime;
   final DateTime? takenTime;
-  final int status;
+  final String status;
 
   DoseLogModel({
     required this.id,
@@ -12,4 +12,22 @@ class DoseLogModel {
     this.takenTime,
     required this.status,
   });
+
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'medicationId': medicationId,
+      'scheduleTime': scheduleTime,
+      'status': status,
+    };
+  }
+
+  factory DoseLogModel.fromJson(Map<String, dynamic> json) {
+    return DoseLogModel(
+      id: json['id'],
+      medicationId: json['medicationId'],
+      scheduleTime: json['scheduleTime'],
+      status: json['status'],
+    );
+  }
 }
