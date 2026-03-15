@@ -75,18 +75,6 @@ class PatientDashboardView extends StatelessWidget {
         onPressed: () {},
         child: const Icon(Icons.add),
       ),
-
-      bottomNavigationBar: BottomNavigationBar(
-        items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: "Dashboard"),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.medication),
-            label: "Medicines",
-          ),
-          BottomNavigationBarItem(icon: Icon(Icons.alarm), label: "Reminders"),
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile"),
-        ],
-      ),
     );
   }
 }

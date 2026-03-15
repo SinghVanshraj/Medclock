@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:medclock/core/services/user_role_data.dart';
-import 'package:medclock/features/views/dashboard/caregiver_dashboard_view.dart';
-import 'package:medclock/features/views/dashboard/patient_dashboard_view.dart';
+import 'package:medclock/features/views/dashboard/caregiver/caregiver_root_screen.dart';
+import 'package:medclock/features/views/dashboard/patient/patient_root_screen.dart';
 import 'package:provider/provider.dart';
 import 'package:medclock/features/viewmodels/auth_view_model.dart';
 
@@ -47,10 +47,10 @@ class _AuthLoginViewState extends State<AuthLoginView> {
           }
 
           if (snapshot.data!.role == 'caregiver') {
-            return CaregiverDashboardView();
+            return CaregiverRootScreen();
           }
           if (snapshot.data!.role == 'patient') {
-            return PatientDashboardView();
+            return PatientRootScreen();
           }
           return Scaffold(body: Center(child: Text('no role exist')));
         },
