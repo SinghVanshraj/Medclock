@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:medclock/core/widgets/patient_tile.dart';
 
 class CaregiverDashboardView extends StatelessWidget {
   const CaregiverDashboardView({super.key});
@@ -8,19 +9,13 @@ class CaregiverDashboardView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Caregiver Dashboard"),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.person),
-            onPressed: () {},
-          )
-        ],
+        actions: [IconButton(icon: const Icon(Icons.person), onPressed: () {})],
       ),
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-
             /// Greeting
             const Text(
               "Hello, Caregiver",
@@ -57,13 +52,18 @@ class CaregiverDashboardView extends StatelessWidget {
             Expanded(
               child: ListView(
                 children: [
-                  patientTile("Ravi Kumar", "2 doses missed today"),
-                  patientTile("Anita Sharma", "All doses taken"),
-                  patientTile("Rahul Singh", "1 upcoming dose"),
+                  PatientTile(
+                    name: "Ravi Kumar",
+                    status: "2 doses missed today",
+                  ),
+                  PatientTile(name: "Anita Sharma", status: "All doses taken"),
+                  PatientTile(name: "Rahul Singh", status: "1 upcoming dose"),
                 ],
               ),
             ),
           ],
         ),
       ),
+    );
+  }
 }
