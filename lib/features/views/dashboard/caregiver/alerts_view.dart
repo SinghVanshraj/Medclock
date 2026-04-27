@@ -46,31 +46,4 @@ class AlertsView extends StatelessWidget {
       ),
     );
   }
-
-  Widget alertTile({
-    required IconData icon,
-    required String title,
-    required String subtitle,
-    required String time,
-    required Color iconColor,
-  }) {
-    return Card(
-      child: ListTile(
-        leading: CircleAvatar(
-          backgroundColor: iconColor.withOpacity(0.12),
-          child: Icon(icon, color: iconColor),
-        ),
-        title: Text(
-          title,
-          style: const TextStyle(fontWeight: FontWeight.bold),
-        ),
-        subtitle: Text(subtitle),
-        trailing: Text(
-          time,
-          style: const TextStyle(fontSize: 12, color: Colors.grey),
-        ),
-        onTap: () {},
-      ),
-    );
-  }
 }
